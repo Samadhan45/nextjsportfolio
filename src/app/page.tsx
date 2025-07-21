@@ -11,28 +11,25 @@ import FeaturedResourcesSection from '@/components/sections/featured-resources-s
 import FaqSection from '@/components/sections/faq-section';
 import ContactSection from '@/components/sections/contact-section';
 import Footer from '@/components/layout/footer';
-import { ThemeProvider } from 'next-themes';
 
 export default function Home() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-      <div className="flex flex-col min-h-screen bg-background text-foreground">
-        <Header />
-        <main className="flex-grow">
-          <HeroSection />
-          <AboutSection />
-          <SkillsSection />
-          <MyApproachSection />
-          <ExperienceSection />
-          <ProjectsSection />
-          <EducationSection />
-          <CertificationsSection />
-          <FeaturedResourcesSection />
-          <FaqSection />
-          <ContactSection />
-        </main>
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <Header />
+      <main className="flex-grow">
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <MyApproachSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <EducationSection />
+        <CertificationsSection />
+        <FeaturedResourcesSection />
+        <FaqSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </div>
   );
 }
