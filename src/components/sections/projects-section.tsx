@@ -10,7 +10,7 @@ const projects = [
   {
     title: 'Full-Stack Finance WebApp',
     description: "A comprehensive finance management application built with Next.js, Tailwind CSS, Clerk authentication, and Gemini AI integration. Features Google authentication for 100+ users, AI-powered bill scanning that automatically adds 10+ expenses, and efficient data storage with Neon PostgreSQL. Deployed on Vercel for fast, global access with secure session handling.",
-    image: 'https://placehold.co/600x400.png',
+    image: '/finance-dashboard.png',
     dataAiHint: 'finance dashboard',
     liveLink: '#',
     githubLink: '#',
@@ -19,7 +19,7 @@ const projects = [
   {
     title: 'Developer Portfolio Website',
     description: "A clean, responsive portfolio website showcasing live projects using core web development skills. Built with HTML, CSS, and JavaScript, deployed on GitHub Pages with optimized file structure for fast loading and smooth navigation. Achieved 100% mobile responsiveness and cross-browser compatibility.",
-    image: 'https://placehold.co/600x400.png',
+    image: '/portfolio-website.png',
     dataAiHint: 'portfolio website',
     liveLink: '#',
     githubLink: '#',
@@ -28,7 +28,7 @@ const projects = [
   {
     title: 'React.js Analytics Dashboard',
     description: "Led a team of 4 students to build a fully responsive React.js dashboard for internal project tracking and analytics. Designed and developed 10+ reusable components, enhanced UI consistency contributing to 20% faster load times and 100% mobile responsiveness.",
-    image: 'https://placehold.co/600x400.png',
+    image: '/analytics-dashboard.png',
     dataAiHint: 'analytics dashboard',
     liveLink: '#',
     githubLink: '#',
@@ -45,11 +45,20 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
              <ScrollAnimationWrapper key={project.title} animation="slideInUp" delay={index * 100}>
               <Card className="bg-background h-full overflow-hidden group border-border/50 hover:border-primary transition-all duration-300 ease-in-out transform hover:-translate-y-2 card-glow hover:card-glow-hover flex flex-col">
+                 <div className="relative w-full h-48">
+                   <Image 
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      data-ai-hint={project.dataAiHint}
+                   />
+                 </div>
                 <CardHeader>
-                   <CardTitle className="text-xl flex items-center gap-2">
-                     <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center">
+                   <CardTitle className="text-xl flex items-start gap-3">
+                     <span className="w-8 h-8 mt-1 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
                         <ArrowUpRight className="w-5 h-5 text-primary" />
-                     </div>
+                     </span>
                      {project.title}
                     </CardTitle>
                 </CardHeader>

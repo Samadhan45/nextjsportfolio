@@ -47,7 +47,6 @@ export default function HeroSection() {
                       width={400}
                       height={400}
                       className="rounded-full object-cover border-4 border-primary/20 shadow-lg"
-                      data-ai-hint="man portrait"
                       priority
                   />
               </div>
