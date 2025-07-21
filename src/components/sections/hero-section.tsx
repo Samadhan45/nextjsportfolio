@@ -6,10 +6,10 @@ import { Download } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-24 pb-12">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <ScrollAnimationWrapper animation="slideInLeft" className="w-full">
               <div className="text-center md:text-left">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">
                   Hi, I&apos;m <span className="text-primary">Samadhan Kadam</span>
@@ -37,20 +37,20 @@ export default function HeroSection() {
                    <SocialIcons />
                 </div>
               </div>
-            </div>
+            </ScrollAnimationWrapper>
           
-            <div>
-            <div className="relative w-80 h-80 mx-auto md:w-96 md:h-96">
-                <Image 
-                    src="https://placehold.co/400x400.png"
-                    alt="Samadhan Kadam"
-                    width={400}
-                    height={400}
-                    className="rounded-full object-cover border-4 border-primary/20 shadow-lg grayscale"
-                    data-ai-hint="man portrait"
-                />
-            </div>
-          </div>
+            <ScrollAnimationWrapper animation="slideInRight" className="w-full">
+              <div className="relative w-80 h-80 mx-auto md:w-96 md:h-96">
+                  <Image 
+                      src="https://placehold.co/400x400.png"
+                      alt="Samadhan Kadam"
+                      width={400}
+                      height={400}
+                      className="rounded-full object-cover border-4 border-primary/20 shadow-lg grayscale"
+                      data-ai-hint="man portrait"
+                  />
+              </div>
+            </ScrollAnimationWrapper>
         </div>
       </div>
     </section>

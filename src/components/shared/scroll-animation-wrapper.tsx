@@ -3,16 +3,24 @@
 import { useRef, useEffect, useState, type ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
+type AnimationType = 'fadeIn' | 'slideInUp' | 'slideInLeft' | 'slideInRight';
+
 interface ScrollAnimationWrapperProps {
   children: ReactNode;
   className?: string;
   style?: React.CSSProperties;
+  animation?: AnimationType;
+  delay?: number;
+  duration?: number;
 }
 
 export default function ScrollAnimationWrapper({
   children,
   className,
   style,
+  animation = 'slideInUp',
+  delay = 0,
+  duration = 700,
 }: ScrollAnimationWrapperProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -42,17 +50,49 @@ export default function ScrollAnimationWrapper({
     };
   }, []);
 
+  const getAnimationClasses = () => {
+    if (isVisible) {
+      switch (animation) {
+        case 'fadeIn':
+          return 'opacity-100';
+        case 'slideInUp':
+          return 'opacity-100 translate-y-0';
+        case 'slideInLeft':
+          return 'opacity-100 translate-x-0';
+        case 'slideInRight':
+          return 'opacity-100 translate-x-0';
+        default:
+          return 'opacity-100 translate-y-0';
+      }
+    } else {
+      switch (animation) {
+        case 'fadeIn':
+          return 'opacity-0';
+        case 'slideInUp':
+          return 'opacity-0 translate-y-8';
+        case 'slideInLeft':
+          return 'opacity-0 -translate-x-12';
+        case 'slideInRight':
+          return 'opacity-0 translate-x-12';
+        default:
+          return 'opacity-0 translate-y-8';
+      }
+    }
+  };
+
   return (
     <div
       ref={ref}
       className={cn(
-        'transition-all duration-700 ease-in-out',
-        isVisible
-          ? 'opacity-100 translate-y-0'
-          : 'opacity-0 translate-y-5',
+        'transition-all ease-in-out',
+        getAnimationClasses(),
         className
       )}
-      style={style}
+      style={{
+        transitionDuration: `${duration}ms`,
+        transitionDelay: `${delay}ms`,
+        ...style,
+      }}
     >
       {children}
     </div>

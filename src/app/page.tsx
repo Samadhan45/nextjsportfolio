@@ -26,9 +26,7 @@ export default function Home() {
       <div className="flex flex-col min-h-screen bg-background text-foreground">
         <Header />
         <main className="flex-grow">
-          <ScrollAnimationWrapper>
-            <HeroSection />
-          </ScrollAnimationWrapper>
+          <HeroSection />
           <ScrollAnimationWrapper>
             <AboutSection />
           </ScrollAnimationWrapper>
