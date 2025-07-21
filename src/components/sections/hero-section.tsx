@@ -2,40 +2,51 @@ import { Button } from '@/components/ui/button';
 import SocialIcons from '@/components/shared/social-icons';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
 import Image from 'next/image';
+import { Download } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-24 pb-12 bg-grid-pattern">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-24 pb-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollAnimationWrapper>
               <div className="text-center md:text-left">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                  Hi, I&apos;m <span className="text-primary text-glow">Samadhan Kadam</span>
+                  Hi, I&apos;m <span className="text-primary">Atharva Kote</span>
                 </h1>
-                <p className="max-w-xl text-foreground/80 leading-relaxed mb-8 mx-auto md:mx-0">
-                  I am a Java Developer skilled in building scalable full-stack applications using React.js and Next.js. I specialize in developing software solutions that bridge technology and real-world challenges, ensuring efficiency, usability, and meaningful impact.
+                <p className="max-w-xl text-foreground/80 leading-relaxed mb-6 mx-auto md:mx-0">
+                  I am a Software Engineering student passionate about building impactful solutions. I specialize in developing software that bridges technology and real-world challenges, ensuring efficiency, usability, and meaningful impact.
                 </p>
                 <p className="max-w-xl text-foreground/80 leading-relaxed mb-8 mx-auto md:mx-0">
-                  A Developer Fueled By Curiosity, Innovation And Continuous Learning, Building Solutions That Matter!!
+                  My work spans web development, cloud computing, DevOps, and cybersecurity, driven by a belief that technology should solve problems, not create them. I am dedicated to crafting scalable, effective, and user-centric solutions while fostering a culture of collaboration, knowledge-sharing, and continuous improvement.
                 </p>
-                <div className="flex justify-center md:justify-start items-center space-x-4">
-                   <Button asChild>
-                      <a href="/samadhan-kadam-resume.pdf" download>Download CV</a>
+
+                <div className="relative p-4 border-l-2 border-primary mb-8">
+                  <p className="text-foreground/80 leading-relaxed italic">
+                    A Student Fueled By Curiosity, Innovative Ideas And Continuous Learning, Figuring Out Stuff !!
+                  </p>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                   <Button asChild className="w-full sm:w-auto">
+                      <a href="/samadhan-kadam-resume.pdf" download>
+                        <Download className="mr-2 h-4 w-4" />
+                        Download Resume
+                      </a>
                   </Button>
                    <SocialIcons />
                 </div>
               </div>
             </ScrollAnimationWrapper>
           
-          <ScrollAnimationWrapper animation="fade-up" delay="200ms">
+          <ScrollAnimationWrapper animation="fade-in" delay="200ms">
             <div className="relative w-80 h-80 mx-auto md:w-96 md:h-96">
                 <Image 
                     src="https://placehold.co/400x400.png"
-                    alt="Samadhan Kadam"
+                    alt="Atharva Kote"
                     width={400}
                     height={400}
-                    className="rounded-full object-cover border-4 border-primary/20 shadow-lg"
+                    className="rounded-full object-cover border-4 border-primary/20 shadow-lg grayscale"
                     data-ai-hint="man portrait"
                 />
             </div>

@@ -1,15 +1,6 @@
 import Header from '@/components/layout/header';
 import HeroSection from '@/components/sections/hero-section';
 import AboutSection from '@/components/sections/about-section';
-import SkillsSection from '@/components/sections/skills-section';
-import ProjectsSection from '@/components/sections/projects-section';
-import ExperienceSection from '@/components/sections/experience-section';
-import CertificationsSection from '@/components/sections/certifications-section';
-import ContactSection from '@/components/sections/contact-section';
-import FaqSection from '@/components/sections/faq-section';
-import Footer from '@/components/layout/footer';
-import MyApproachSection from '@/components/sections/my-approach-section';
-import FeaturedResourcesSection from '@/components/sections/featured-resources-section';
 
 export default function Home() {
   return (
@@ -18,16 +9,7 @@ export default function Home() {
       <main className="flex-grow">
         <HeroSection />
         <AboutSection />
-        <SkillsSection />
-        <MyApproachSection />
-        <ProjectsSection />
-        <CertificationsSection />
-        <ExperienceSection />
-        <FeaturedResourcesSection />
-        <ContactSection />
-        <FaqSection />
       </main>
-      <Footer />
     </div>
   );
 }
