@@ -1,56 +1,63 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import SectionHeading from '../shared/section-heading';
-import CustomizeSkillDialog from '../shared/customize-skill-dialog';
+import { CheckCircle2 } from 'lucide-react';
+import { Badge } from '../ui/badge';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
 
-const skills = [
+const skillCategories = [
   {
-    title: 'Frontend Development',
-    description: 'Designing and developing modern, responsive user interfaces using React.js, HTML5, CSS3, and JavaScript.',
+    category: 'Frontend Development',
+    skills: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Next.js', 'TailwindCSS'],
   },
   {
-    title: 'Backend Development',
-    description: 'Architecting and maintaining scalable backend systems using Java, Django, Node.js, and Next.js.',
+    category: 'Backend Development',
+    skills: ['Java', 'Spring Boot', 'Node.js', 'Django', 'REST APIs'],
   },
   {
-    title: 'Database Management',
-    description: 'Managing and optimizing databases with Oracle SQL, PostgreSQL, and efficient data querying.',
+    category: 'Database Management',
+    skills: ['Oracle SQL', 'PostgreSQL', 'MySQL', 'MongoDB'],
   },
   {
-    title: 'Full-Stack Integration',
-    description: 'Building end-to-end applications with seamless frontend-backend integration and deployment.',
+    category: 'DevOps & Tools',
+    skills: ['Git', 'GitHub', 'Docker', 'Jenkins', 'Vercel'],
   },
   {
-    title: 'Team Leadership',
-    description: 'Leading development teams, managing project lifecycles, and coordinating collaborative development efforts.',
+    category: 'Project Management',
+    skills: ['Agile', 'Scrum', 'Jira', 'Team Leadership'],
   },
   {
-    title: 'Problem Solving',
-    description: 'Strong debugging and problem-solving skills with focus on scalable, efficient solutions.',
+    category: 'Other Skills',
+    skills: ['Problem Solving', 'Data Structures', 'Algorithms', 'System Design'],
   },
 ];
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-20 bg-card">
+    <section id="skills" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          title="My Skills"
-          subtitle="Here's a quick overview of my skills including frontend magic, backend wizardry, and everything in between. I am always eager to learn new technologies."
+          title="Skills & Expertise"
+          subtitle="A detailed list of my technical skills and tools I use to build amazing products."
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skills.map((skill, index) => (
-            <ScrollAnimationWrapper key={skill.title} delay={`${index * 100}ms`}>
-              <Card className="bg-background h-full p-6 border-border/50 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 card-glow hover:card-glow-hover flex flex-col">
-                <CardHeader>
-                  <CardTitle>{skill.title}</CardTitle>
+          {skillCategories.map((category, index) => (
+            <ScrollAnimationWrapper key={category.category} delay={`${index * 100}ms`}>
+              <Card className="bg-card h-full p-6 border-border/50 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 card-glow hover:card-glow-hover flex flex-col">
+                <CardHeader className="p-0 mb-4">
+                  <CardTitle className="flex items-center gap-2 text-xl">
+                    <CheckCircle2 className="w-5 h-5 text-primary" />
+                    {category.category}
+                  </CardTitle>
                 </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-muted-foreground">{skill.description}</p>
+                <CardContent className="p-0 flex-grow">
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <Badge key={skill} variant="secondary">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </CardContent>
-                <div className="mt-4">
-                   <CustomizeSkillDialog skillDescription={skill.description} />
-                </div>
               </Card>
             </ScrollAnimationWrapper>
           ))}

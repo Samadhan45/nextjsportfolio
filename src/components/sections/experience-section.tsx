@@ -1,6 +1,7 @@
 import SectionHeading from '../shared/section-heading';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
+import { Briefcase } from 'lucide-react';
 
 const experiences = [
   {
@@ -21,29 +22,31 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="py-20 bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading title="Work Experience" />
-        <div className="relative">
-          <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border" aria-hidden="true"></div>
+        <SectionHeading title="Experience, Internships & Qualification" subtitle="My professional journey and qualifications." />
+        <div className="relative max-w-3xl mx-auto">
+          <div className="absolute left-4 top-4 w-0.5 h-full bg-border" aria-hidden="true"></div>
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <ScrollAnimationWrapper key={exp.company}>
-                <div className="flex items-center justify-center">
-                  <div className="relative w-full max-w-2xl">
-                    <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full border-4 border-card hidden md:block"></div>
+                 <div className="pl-12 relative">
+                    <div className="absolute left-0 top-1.5">
+                       <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                         <Briefcase className="w-5 h-5 text-primary" />
+                       </div>
+                    </div>
                     <Card className="bg-background border-border/50 hover:border-primary transition-all duration-300 card-glow hover:card-glow-hover">
                       <CardHeader>
                         <div className="flex justify-between items-center flex-wrap gap-2">
-                          <CardTitle className="text-xl text-primary">{exp.role}</CardTitle>
+                          <CardTitle className="text-xl">{exp.role}</CardTitle>
                           <p className="text-sm text-muted-foreground">{exp.period}</p>
                         </div>
-                        <p className="font-semibold">{exp.company}</p>
+                        <p className="font-semibold text-primary">{exp.company}</p>
                       </CardHeader>
                       <CardContent>
                         <CardDescription>{exp.description}</CardDescription>
                       </CardContent>
                     </Card>
-                  </div>
-                </div>
+                 </div>
               </ScrollAnimationWrapper>
             ))}
           </div>

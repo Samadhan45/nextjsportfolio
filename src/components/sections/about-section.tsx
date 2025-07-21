@@ -1,38 +1,33 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, Database, Smartphone, Users, Zap, Briefcase } from 'lucide-react';
+import { Briefcase, Zap, Rocket, Users, Globe } from 'lucide-react';
 import SectionHeading from '../shared/section-heading';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
 
-const services = [
-  {
-    icon: <Code className="w-8 h-8 text-primary" />,
-    title: 'Full-Stack Applications',
-    description: 'Building scalable full-stack applications using React.js, Next.js, and Java.',
-  },
+const facts = [
   {
     icon: <Briefcase className="w-8 h-8 text-primary" />,
-    title: 'Secure Web Apps',
-    description: 'Developing secure web applications with Django, Node.js, and database integration.',
-  },
-  {
-    icon: <Smartphone className="w-8 h-8 text-primary" />,
-    title: 'Responsive UIs',
-    description: 'Creating responsive, mobile-first user interfaces with modern frontend technologies.',
-  },
-  {
-    icon: <Users className="w-8 h-8 text-primary" />,
-    title: 'Authentication Systems',
-    description: 'Implementing authentication systems and user role management solutions.',
-  },
-  {
-    icon: <Users className="w-8 h-8 text-primary" />,
-    title: 'Team Leadership',
-    description: 'Leading development teams and managing project lifecycles from design to deployment.',
+    title: 'Full Stack Developer',
+    description: 'Expertise in building scalable web applications from front to back.',
   },
   {
     icon: <Zap className="w-8 h-8 text-primary" />,
-    title: 'Continuous Learning',
-    description: 'Continuously learning new technologies and frameworks to stay current.',
+    title: 'Java Specialist',
+    description: 'Deep knowledge in Java and its ecosystem for robust backend solutions.',
+  },
+  {
+    icon: <Rocket className="w-8 h-8 text-primary" />,
+    title: 'Project Leadership',
+    description: 'Experience leading teams to deliver high-quality software on time.',
+  },
+  {
+    icon: <Users className="w-8 h-8 text-primary" />,
+    title: 'Remote Collaboration',
+    description: 'Proficient in remote work environments and collaborative tools.',
+  },
+  {
+    icon: <Globe className="w-8 h-8 text-primary" />,
+    title: 'Global Mindset',
+    description: 'Passionate about creating solutions with a worldwide impact.',
   },
 ];
 
@@ -40,19 +35,18 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading title="What I Do" />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ScrollAnimationWrapper key={service.title} delay={`${index * 100}ms`}>
-              <Card className="bg-card h-full text-center p-6 border-border/50 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 card-glow hover:card-glow-hover">
-                <CardHeader className="items-center">
-                  <div className="p-4 bg-primary/10 rounded-full mb-4">
-                    {service.icon}
+        <SectionHeading title="Quick Facts About Me" />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          {facts.map((fact, index) => (
+            <ScrollAnimationWrapper key={fact.title} delay={`${index * 100}ms`}>
+              <Card className="bg-card h-full text-center p-6 border-transparent hover:border-primary transition-all duration-300 transform hover:-translate-y-1">
+                <CardHeader className="items-center p-0 mb-4">
+                  <div className="p-4 bg-primary/10 rounded-lg mb-4">
+                    {fact.icon}
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{service.description}</p>
+                <CardContent className="p-0">
+                  <p className="text-muted-foreground text-sm">{fact.description}</p>
                 </CardContent>
               </Card>
             </ScrollAnimationWrapper>

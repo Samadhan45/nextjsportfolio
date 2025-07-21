@@ -1,38 +1,57 @@
 import { Github, Linkedin, Mail, Phone, ExternalLink } from 'lucide-react';
 import SocialIcons from '../shared/social-icons';
+import Link from 'next/link';
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
+  const footerLinks = {
+    'Quick Links': [
+      { name: 'Home', href: '#home' },
+      { name: 'About', href: '#about' },
+      { name: 'Skills', href: '#skills' },
+      { name: 'Projects', href: '#projects' },
+    ],
+    'Connect': [
+        { name: 'Contact', href: '#contact' },
+        { name: 'Experience', href: '#experience' },
+        { name: 'Certifications', href: '#certifications' },
+        { name: 'GitHub', href: 'https://github.com/Samadhan45' },
+    ],
+    'Legal': [
+        { name: 'Privacy Policy', href: '#' },
+        { name: 'Terms of Service', href: '#' },
+    ]
+  }
+
   return (
-    <footer id="contact" className="border-t border-border/50 py-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h3 className="text-3xl font-bold mb-4 text-primary">Get In Touch</h3>
-        <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-          I&apos;m currently open to new opportunities. Feel free to reach out via email or connect with me on social media.
-        </p>
-        <div className="flex justify-center items-center space-x-6 mb-8">
-          <a
-            href="mailto:samadhankadam002@gmail.com"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          >
-            <Mail className="w-5 h-5" />
-            <span>samadhankadam002@gmail.com</span>
-          </a>
-          <a
-            href="tel:+918010792529"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          >
-            <Phone className="w-5 h-5" />
-            <span>+91 8010792529</span>
-          </a>
+    <footer id="footer" className="border-t border-border/50 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-4 gap-8">
+            <div className="col-span-1">
+                <h3 className="text-2xl font-bold text-primary mb-2">samadhan.dev</h3>
+                <p className="text-muted-foreground text-sm">Full Stack Developer</p>
+            </div>
+            {Object.entries(footerLinks).map(([title, links]) => (
+                <div key={title}>
+                    <h4 className="font-semibold mb-4">{title}</h4>
+                    <ul className="space-y-2">
+                        {links.map(link => (
+                            <li key={link.name}>
+                                <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                                    {link.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
         </div>
-        <SocialIcons />
-        <div className="mt-12 text-sm text-muted-foreground">
-          <p>
-            &copy; {year} Samadhan Vilas Kadam. All rights reserved.
-          </p>
-          <p>Built with Next.js and Tailwind CSS. Inspired by Atharva Kote.</p>
+        <div className="mt-12 pt-8 border-t border-border/50 flex justify-between items-center">
+            <p className="text-sm text-muted-foreground">
+                &copy; {year} Samadhan Kadam. All rights reserved.
+            </p>
+            <SocialIcons />
         </div>
       </div>
     </footer>

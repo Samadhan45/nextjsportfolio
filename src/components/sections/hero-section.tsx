@@ -5,13 +5,13 @@ import Image from 'next/image';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-24 pb-12">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-24 pb-12 bg-grid-pattern">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollAnimationWrapper>
               <div className="text-center md:text-left">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                  Hi, I&apos;m <span className="text-primary text-glow">Samadhan Kote</span>
+                  Hi, I&apos;m <span className="text-primary text-glow">Samadhan Kadam</span>
                 </h1>
                 <p className="max-w-xl text-foreground/80 leading-relaxed mb-8 mx-auto md:mx-0">
                   I am a Java Developer skilled in building scalable full-stack applications using React.js and Next.js. I specialize in developing software solutions that bridge technology and real-world challenges, ensuring efficiency, usability, and meaningful impact.
@@ -23,9 +23,7 @@ export default function HeroSection() {
                    <Button asChild>
                       <a href="/samadhan-kadam-resume.pdf" download>Download CV</a>
                   </Button>
-                  <div className="md:hidden">
-                    <SocialIcons />
-                  </div>
+                   <SocialIcons />
                 </div>
               </div>
             </ScrollAnimationWrapper>

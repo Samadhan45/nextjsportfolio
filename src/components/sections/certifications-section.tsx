@@ -34,8 +34,8 @@ export default function CertificationsSection() {
   return (
     <section id="certifications" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading title="Certifications & Achievements" />
-        <div className="grid md:grid-cols-2 gap-8">
+        <SectionHeading title="Achievements & Honors" subtitle="A collection of my certifications, publications, and other professional achievements."/>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {achievements.map((item, index) => (
             <ScrollAnimationWrapper key={item.title} delay={`${index * 100}ms`}>
               <Card className="bg-card h-full border-border/50 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 card-glow hover:card-glow-hover">
