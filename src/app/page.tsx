@@ -12,50 +12,42 @@ import FaqSection from '@/components/sections/faq-section';
 import ContactSection from '@/components/sections/contact-section';
 import Footer from '@/components/layout/footer';
 import ClientOnly from '@/components/shared/client-only';
-import { ThemeProvider } from '@/components/shared/theme-provider';
 import ScrollAnimationWrapper from '@/components/shared/scroll-animation-wrapper';
 
 export default function Home() {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="dark"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <div className="flex flex-col min-h-screen bg-background text-foreground">
-        <Header />
-        <main className="flex-grow">
-          <HeroSection />
-          <ScrollAnimationWrapper>
-            <AboutSection />
-          </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper>
-            <EducationSection />
-          </ScrollAnimationWrapper>
-          <SkillsSection />
-          <ScrollAnimationWrapper>
-            <MyApproachSection />
-          </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper>
-            <ExperienceSection />
-          </ScrollAnimationWrapper>
-          <ProjectsSection />
-          <CertificationsSection />
-          <ScrollAnimationWrapper>
-            <FeaturedResourcesSection />
-          </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper>
-            <FaqSection />
-          </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper>
-            <ContactSection />
-          </ScrollAnimationWrapper>
-        </main>
-        <ClientOnly>
-          <Footer />
-        </ClientOnly>
-      </div>
-    </ThemeProvider>
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <Header />
+      <main className="flex-grow">
+        <HeroSection />
+        <ScrollAnimationWrapper animation="slideInRight">
+          <AboutSection />
+        </ScrollAnimationWrapper>
+        <ScrollAnimationWrapper>
+          <EducationSection />
+        </ScrollAnimationWrapper>
+        <SkillsSection />
+        <ScrollAnimationWrapper>
+          <MyApproachSection />
+        </ScrollAnimationWrapper>
+        <ScrollAnimationWrapper animation="slideInLeft">
+          <ExperienceSection />
+        </ScrollAnimationWrapper>
+        <ProjectsSection />
+        <CertificationsSection />
+        <ScrollAnimationWrapper>
+          <FeaturedResourcesSection />
+        </ScrollAnimationWrapper>
+        <ScrollAnimationWrapper>
+          <FaqSection />
+        </ScrollAnimationWrapper>
+        <ScrollAnimationWrapper>
+          <ContactSection />
+        </ScrollAnimationWrapper>
+      </main>
+      <ClientOnly>
+        <Footer />
+      </ClientOnly>
+    </div>
   );
 }
