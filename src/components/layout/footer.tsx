@@ -1,9 +1,16 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Phone, ExternalLink } from 'lucide-react';
 import SocialIcons from '../shared/social-icons';
 import Link from 'next/link';
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   const footerLinks = {
     'Quick Links': [
