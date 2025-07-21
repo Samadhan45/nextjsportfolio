@@ -33,7 +33,7 @@ export default function EducationSection() {
           <div className="absolute left-4 top-4 w-0.5 h-full bg-border" aria-hidden="true"></div>
           <div className="space-y-12">
             {educationHistory.map((edu, index) => (
-              <ScrollAnimationWrapper key={index} animation={index % 2 === 0 ? 'fade-right' : 'fade-left'}>
+              <ScrollAnimationWrapper key={index}>
                  <div className="pl-12 relative">
                     <div className="absolute left-0 top-1.5">
                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
