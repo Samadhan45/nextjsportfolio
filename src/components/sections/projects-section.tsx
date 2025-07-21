@@ -44,7 +44,7 @@ export default function ProjectsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
              <ScrollAnimationWrapper key={project.title} style={{ transitionDelay: `${index * 150}ms` }}>
-              <Card className="bg-background h-full overflow-hidden group border-border/50 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 card-glow hover:card-glow-hover flex flex-col">
+              <Card className="bg-background h-full overflow-hidden group border-border/50 hover:border-primary transition-all duration-300 ease-in-out transform hover:-translate-y-2 card-glow hover:card-glow-hover flex flex-col">
                 <CardHeader>
                    <CardTitle className="text-xl flex items-center gap-2">
                      <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center">

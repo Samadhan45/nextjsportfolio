@@ -75,7 +75,7 @@ export default function SkillsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <ScrollAnimationWrapper key={category.category} style={{ transitionDelay: `${index * 150}ms` }}>
-              <Card className="bg-card h-full p-6 border-border/50 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 card-glow hover:card-glow-hover flex flex-col">
+              <Card className="bg-card h-full p-6 border-border/50 hover:border-primary transition-all duration-300 ease-in-out transform hover:-translate-y-2 card-glow hover:card-glow-hover flex flex-col">
                 <CardHeader className="p-0 mb-4">
                   <CardTitle className="flex items-center gap-2 text-xl">
                     <CheckCircle2 className="w-5 h-5 text-primary" />

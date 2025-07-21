@@ -46,10 +46,10 @@ export default function ScrollAnimationWrapper({
     <div
       ref={ref}
       className={cn(
-        'transition-all duration-1000 ease-out',
+        'transition-all duration-700 ease-in-out',
         isVisible
           ? 'opacity-100 translate-y-0'
-          : 'opacity-0 translate-y-8',
+          : 'opacity-0 translate-y-5',
         className
       )}
       style={style}

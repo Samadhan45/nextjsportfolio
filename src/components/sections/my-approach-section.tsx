@@ -28,8 +28,8 @@ export default function MyApproachSection() {
         <SectionHeading title="My Approach" subtitle="My process for building successful digital products." />
         <div className="grid md:grid-cols-3 gap-8">
           {approachSteps.map((step, index) => (
-            <ScrollAnimationWrapper key={step.title} delay={`${index * 100}ms`}>
-              <Card className="bg-card h-full text-center p-8 border-border/50 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 card-glow hover:card-glow-hover">
+            <ScrollAnimationWrapper key={step.title} style={{ transitionDelay: `${index * 150}ms` }}>
+              <Card className="bg-card h-full text-center p-8 border-border/50 hover:border-primary transition-all duration-300 ease-in-out transform hover:-translate-y-2 card-glow hover:card-glow-hover">
                 <CardHeader className="items-center">
                   <div className="p-4 bg-primary/10 rounded-full mb-4">{step.icon}</div>
                   <p className="text-muted-foreground">{step.phase}</p>

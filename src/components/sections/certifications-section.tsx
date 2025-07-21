@@ -52,7 +52,7 @@ export default function CertificationsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {achievements.map((item, index) => (
             <ScrollAnimationWrapper key={item.title} style={{ transitionDelay: `${index * 150}ms` }}>
-              <Card className={`bg-card h-full border rounded-lg transition-all duration-300 transform hover:-translate-y-1 flex flex-col ${item.variant === 'honor' ? 'border-amber-400/50 hover:border-amber-400' : 'border-primary/20 hover:border-primary'}`}>
+              <Card className={`bg-card h-full border rounded-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 flex flex-col ${item.variant === 'honor' ? 'border-amber-400/50 hover:border-amber-400' : 'border-primary/20 hover:border-primary'}`}>
                 <CardContent className="p-6 flex flex-col flex-grow">
                   <Badge variant={item.variant === 'honor' ? 'secondary' : 'default'} className={`mb-4 w-fit ${item.variant === 'honor' ? 'bg-amber-400/10 text-amber-400 border-amber-400/20' : 'bg-primary/10 text-primary border-primary/20'}`}>{item.type}</Badge>
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>

@@ -40,7 +40,7 @@ export default function EducationSection() {
                          <GraduationCap className="w-5 h-5 text-primary" />
                        </div>
                     </div>
-                    <Card className="bg-background border-border/50 hover:border-primary transition-all duration-300 card-glow hover:card-glow-hover">
+                    <Card className="bg-background border-border/50 hover:border-primary transition-all duration-300 ease-in-out card-glow hover:card-glow-hover">
                       <CardHeader>
                         <div className="flex justify-between items-center flex-wrap gap-2">
                           <CardTitle className="text-xl">{edu.degree}</CardTitle>
