@@ -42,12 +42,13 @@ export default function HeroSection() {
             <ScrollAnimationWrapper animation="slideInRight" className="w-full">
               <div className="relative w-80 h-80 mx-auto md:w-96 md:h-96">
                   <Image 
-                      src="https://placehold.co/400x400.png"
+                      src="/samadhan-kadam-portrait.png"
                       alt="Samadhan Kadam"
                       width={400}
                       height={400}
-                      className="rounded-full object-cover border-4 border-primary/20 shadow-lg grayscale"
+                      className="rounded-full object-cover border-4 border-primary/20 shadow-lg"
                       data-ai-hint="man portrait"
+                      priority
                   />
               </div>
             </ScrollAnimationWrapper>
