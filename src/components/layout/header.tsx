@@ -97,6 +97,16 @@ export default function Header() {
     ));
   }
 
+  const renderThemeToggle = () => {
+    if (!mounted) return null;
+
+    return (
+      <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
+        {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+      </Button>
+    );
+  };
+
   return (
     <header
       className={cn(
@@ -116,9 +126,7 @@ export default function Header() {
             {renderNavLinks(false)}
           </nav>
           <div className="hidden md:flex items-center gap-2">
-             {mounted && <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>}
+             {renderThemeToggle()}
           </div>
           <div className="md:hidden">
             <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -132,9 +140,7 @@ export default function Header() {
           <nav className="flex flex-col items-center space-y-2 pt-4">
             {renderNavLinks(true)}
              <div className="mt-4">
-                {mounted && <Button variant="ghost" size="icon" onClick={toggleTheme}>
-                  {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-                </Button>}
+                {renderThemeToggle()}
             </div>
           </nav>
         </div>
