@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { Menu, X, Moon, Sun, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,25 +15,14 @@ import { useTheme } from 'next-themes';
 
 
 const navLinks = [
-  { name: 'Home', href: '/' },
+  { name: 'Home', href: '#home' },
   { 
     name: 'About', 
-    href: '#',
-    dropdown: [
-      { name: 'About Me', href: '#about' },
-      { name: 'Experience', href: '#experience' },
-    ]
+    href: '#about'
   },
+  { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Blog', href: '#' },
-  { name: 'Achievement', href: '#certifications' },
-  { 
-    name: 'Resources', 
-    href: '#',
-    dropdown: [
-      { name: 'Featured Resources', href: '#resources' },
-    ]
-  },
+  { name: 'Experience', href: '#experience' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -46,90 +35,71 @@ export default function Header() {
 
   useEffect(() => setMounted(true), []);
   
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-      const sections = navLinks.map(l => {
-          if (l.href.startsWith('/#') || l.href.startsWith('#')) {
-            const id = l.href.split('#')[1];
-            return document.getElementById(id);
-          }
-          if(l.dropdown) {
-            l.dropdown.forEach(dl => {
-              if (dl.href.startsWith('#')) {
-                return document.getElementById(dl.href.substring(1));
-              }
-            })
-          }
-          return null;
-        }
-      ).filter(Boolean);
-      
-      let current = 'Home';
-      sections.forEach(section => {
-        if (section && window.scrollY >= (section as HTMLElement).offsetTop - 100) {
-          const link = navLinks.find(l => `#${section.id}` === l.href || (l.dropdown && l.dropdown.some(d => d.href === `#${section.id}`)));
-          if (link) current = link.name;
-        }
-      });
-      setActiveLink(current);
+  const throttle = (func: (...args: any[]) => void, delay: number) => {
+    let lastCall = 0;
+    return (...args: any[]) => {
+      const now = new Date().getTime();
+      if (now - lastCall < delay) {
+        return;
+      }
+      lastCall = now;
+      return func(...args);
     };
+  };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 10);
+
+    let current = 'Home';
+    for (const link of navLinks) {
+      if (link.href.startsWith('#')) {
+        const section = document.getElementById(link.href.substring(1));
+        if (section && window.scrollY >= section.offsetTop - 100) {
+          current = link.name;
+        }
+      }
+    }
+    setActiveLink(current);
+  }, []);
+  
+  useEffect(() => {
+    const throttledScroll = throttle(handleScroll, 100);
+    window.addEventListener('scroll', throttledScroll, { passive: true });
     handleScroll();
     
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => window.removeEventListener('scroll', throttledScroll);
+  }, [handleScroll]);
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   }
 
+  const handleLinkClick = (name: string, href: string) => {
+    setActiveLink(name);
+    setIsMenuOpen(false);
+    const element = document.getElementById(href.substring(1));
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const renderNavLinks = (isMobile = false) => {
     return navLinks.map((link) => (
-      link.dropdown ? (
-         <DropdownMenu key={link.name}>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className={cn(
-                  "text-foreground/80 hover:text-primary transition-colors data-[active=true]:text-primary data-[active=true]:bg-primary/10",
-                  {'text-lg w-full justify-center': isMobile},
-                  {'px-3': !isMobile}
-                )}
-                data-active={activeLink === link.name || (link.dropdown && link.dropdown.some(d => activeLink === d.name))}
-                >
-                {link.name} <ChevronDown className="ml-1 h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {link.dropdown.map(dLink => (
-                  <DropdownMenuItem key={dLink.name} asChild>
-                      <Link href={dLink.href} onClick={() => {
-                        setActiveLink(dLink.name);
-                        if (isMobile) setIsMenuOpen(false)
-                      }}>
-                        {dLink.name}
-                      </Link>
-                  </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-      ) : (
-        <Link
-          key={link.name}
-          href={link.href}
-          onClick={() => {
-            setActiveLink(link.name);
-            if (isMobile) setIsMenuOpen(false);
-          }}
-          className={cn(
-            'transition-colors',
-            activeLink === link.name ? 'text-primary' : 'text-foreground/80 hover:text-primary',
-            isMobile ? 'text-lg' : 'px-3 py-2 rounded-md'
-          )}
-        >
-          {link.name}
-        </Link>
-      )
+      <Button
+        key={link.name}
+        variant="link"
+        onClick={(e) => {
+          e.preventDefault();
+          handleLinkClick(link.name, link.href);
+        }}
+        className={cn(
+          'transition-colors',
+          activeLink === link.name ? 'text-primary' : 'text-foreground/80 hover:text-primary',
+          isMobile ? 'text-lg w-full justify-center' : 'px-3 py-2 rounded-md'
+        )}
+      >
+        {link.name}
+      </Button>
     ));
   }
 
@@ -142,7 +112,10 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="#home" className="text-2xl font-bold text-primary hover:text-glow transition-all">
+          <Link href="#home" className="text-2xl font-bold text-primary hover:text-glow transition-all" onClick={(e) => {
+             e.preventDefault();
+             handleLinkClick('Home', '#home');
+          }}>
             samadhan.dev
           </Link>
           <nav className="hidden md:flex items-center space-x-2">

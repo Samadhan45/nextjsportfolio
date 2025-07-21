@@ -64,6 +64,10 @@
     --input: 254 18% 15%;
     --ring: 250 93% 89%;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer base {
@@ -72,7 +76,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    scroll-behavior: smooth;
   }
 }
 
