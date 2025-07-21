@@ -11,6 +11,7 @@ import FeaturedResourcesSection from '@/components/sections/featured-resources-s
 import FaqSection from '@/components/sections/faq-section';
 import ContactSection from '@/components/sections/contact-section';
 import Footer from '@/components/layout/footer';
+import ClientOnly from '@/components/shared/client-only';
 
 export default function Home() {
   return (
@@ -29,7 +30,9 @@ export default function Home() {
         <FaqSection />
         <ContactSection />
       </main>
-      <Footer />
+      <ClientOnly>
+        <Footer />
+      </ClientOnly>
     </div>
   );
 }

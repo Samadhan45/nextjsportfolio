@@ -5,11 +5,7 @@ import SocialIcons from '../shared/social-icons';
 import Link from 'next/link';
 
 export default function Footer() {
-  const [year, setYear] = useState(new Date().getFullYear());
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+  const year = new Date().getFullYear();
 
   const footerLinks = {
     'Quick Links': [
