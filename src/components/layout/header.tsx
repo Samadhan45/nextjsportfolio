@@ -27,36 +27,42 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   
-  const throttle = (func: (...args: any[]) => void, delay: number) => {
-    let lastCall = 0;
-    return (...args: any[]) => {
-      const now = new Date().getTime();
-      if (now - lastCall < delay) {
-        return;
-      }
-      lastCall = now;
-      return func(...args);
-    };
-  };
-
   const handleScroll = useCallback(() => {
-    setIsScrolled(window.scrollY > 10);
+    if (typeof window !== 'undefined') {
+      setIsScrolled(window.scrollY > 10);
 
-    let current = 'Home';
-    for (const link of navLinks) {
-      if (link.href.startsWith('#')) {
-        const section = document.getElementById(link.href.substring(1));
+      let current = 'Home';
+      const sections = navLinks.map(link => document.getElementById(link.href.substring(1))).filter(Boolean);
+
+      for (const section of sections) {
         if (section && window.scrollY >= section.offsetTop - 100) {
-          current = link.name;
+          const matchingLink = navLinks.find(link => `#${section.id}` === link.href);
+          if (matchingLink) {
+            current = matchingLink.name;
+          }
         }
       }
+      setActiveLink(current);
     }
-    setActiveLink(current);
   }, []);
   
   useEffect(() => {
+    const throttle = (func: (...args: any[]) => void, delay: number) => {
+      let lastCall = 0;
+      return (...args: any[]) => {
+        const now = new Date().getTime();
+        if (now - lastCall < delay) {
+          return;
+        }
+        lastCall = now;
+        return func(...args);
+      };
+    };
+
     const throttledScroll = throttle(handleScroll, 100);
     window.addEventListener('scroll', throttledScroll, { passive: true });
     handleScroll();

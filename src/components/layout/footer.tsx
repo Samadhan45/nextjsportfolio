@@ -5,11 +5,9 @@ import SocialIcons from '../shared/social-icons';
 import Link from 'next/link';
 
 export default function Footer() {
-  const [year, setYear] = useState<number | null>(null);
+  const [year, setYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
-    // This ensures the year is set only on the client-side after hydration,
-    // preventing a mismatch with the server-rendered value.
     setYear(new Date().getFullYear());
   }, []);
 
@@ -57,7 +55,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 pt-8 border-t border-border/50 flex justify-between items-center">
             <p className="text-sm text-muted-foreground">
-                &copy; {year || new Date().getFullYear()} Samadhan Kadam. All rights reserved.
+                &copy; {year} Samadhan Kadam. All rights reserved.
             </p>
             <SocialIcons />
         </div>
