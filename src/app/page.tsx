@@ -27,11 +27,11 @@ export default function Home() {
         <main className="flex-grow">
           <HeroSection />
           <AboutSection />
+          <EducationSection />
           <SkillsSection />
           <MyApproachSection />
           <ExperienceSection />
           <ProjectsSection />
-          <EducationSection />
           <CertificationsSection />
           <FeaturedResourcesSection />
           <FaqSection />
