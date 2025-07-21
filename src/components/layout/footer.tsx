@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Phone, ExternalLink } from 'lucide-react';
 import SocialIcons from '../shared/social-icons';
 import Link from 'next/link';
 
@@ -9,6 +8,8 @@ export default function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
+    // This ensures the year is set only on the client-side after hydration,
+    // preventing a mismatch with the server-rendered value.
     setYear(new Date().getFullYear());
   }, []);
 
