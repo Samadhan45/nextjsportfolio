@@ -120,7 +120,7 @@ export default function AboutSection() {
         <SectionHeading title="Quick Facts About Me" />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {facts.map((fact, index) => (
-            <ScrollAnimationWrapper key={fact.title} style={{ transitionDelay: `${index * 150}ms` }}>
+            <ScrollAnimationWrapper key={fact.title} animation="slideInUp" delay={index * 100}>
               <div className="bg-transparent h-full text-center p-6">
                   <div className="flex justify-center items-center mb-4">
                     <div className="p-4 bg-primary/10 rounded-lg">

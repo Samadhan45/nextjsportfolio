@@ -20,7 +20,7 @@ export default function ScrollAnimationWrapper({
   style,
   animation = 'slideInUp',
   delay = 0,
-  duration = 700,
+  duration = 1000,
 }: ScrollAnimationWrapperProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -69,13 +69,13 @@ export default function ScrollAnimationWrapper({
         case 'fadeIn':
           return 'opacity-0';
         case 'slideInUp':
-          return 'opacity-0 translate-y-8';
+          return 'opacity-0 translate-y-12';
         case 'slideInLeft':
-          return 'opacity-0 -translate-x-12';
+          return 'opacity-0 -translate-x-16';
         case 'slideInRight':
-          return 'opacity-0 translate-x-12';
+          return 'opacity-0 translate-x-16';
         default:
-          return 'opacity-0 translate-y-8';
+          return 'opacity-0 translate-y-12';
       }
     }
   };

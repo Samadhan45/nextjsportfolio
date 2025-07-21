@@ -10,6 +10,7 @@ import { Button } from '../ui/button';
 import { Mail, Phone, Send } from 'lucide-react';
 import SocialIcons from '../shared/social-icons';
 import { useToast } from '@/hooks/use-toast';
+import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
 
 type FormValues = {
   name: string;
@@ -41,7 +42,7 @@ export default function ContactSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading title="Get in Touch" subtitle="I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions." />
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="md:col-span-1 space-y-8">
+          <ScrollAnimationWrapper animation="slideInLeft" className="md:col-span-1 space-y-8">
             <div>
               <h3 className="text-lg font-semibold mb-2">Contact Info</h3>
               <div className="space-y-2">
@@ -59,8 +60,8 @@ export default function ContactSection() {
               <h3 className="text-lg font-semibold mb-2">Connect with Me</h3>
                <SocialIcons />
              </div>
-          </div>
-          <div className="md:col-span-2">
+          </ScrollAnimationWrapper>
+          <ScrollAnimationWrapper animation="slideInRight" className="md:col-span-2">
             <Card className="bg-background border-border/50">
               <CardContent className="p-6">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -75,7 +76,7 @@ export default function ContactSection() {
                 </form>
               </CardContent>
             </Card>
-          </div>
+          </ScrollAnimationWrapper>
         </div>
       </div>
     </section>

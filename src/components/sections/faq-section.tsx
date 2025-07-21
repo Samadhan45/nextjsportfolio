@@ -1,5 +1,6 @@
 import SectionHeading from '../shared/section-heading';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
 
 const faqs = [
     {
@@ -33,18 +34,20 @@ export default function FaqSection() {
     <section id="faq" className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeading title="Frequently Asked Questions" subtitle="Here are some common questions I get. Feel free to reach out if you have more."/>
-            <div className="max-w-3xl mx-auto">
-                <Accordion type="single" collapsible className="w-full">
-                    {faqs.map((faq, index) => (
-                        <AccordionItem value={`item-${index}`} key={index}>
-                            <AccordionTrigger>{faq.question}</AccordionTrigger>
-                            <AccordionContent>
-                                {faq.answer}
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
-            </div>
+            <ScrollAnimationWrapper animation="fadeIn">
+              <div className="max-w-3xl mx-auto">
+                  <Accordion type="single" collapsible className="w-full">
+                      {faqs.map((faq, index) => (
+                          <AccordionItem value={`item-${index}`} key={index}>
+                              <AccordionTrigger>{faq.question}</AccordionTrigger>
+                              <AccordionContent>
+                                  {faq.answer}
+                              </AccordionContent>
+                          </AccordionItem>
+                      ))}
+                  </Accordion>
+              </div>
+            </ScrollAnimationWrapper>
         </div>
     </section>
   )

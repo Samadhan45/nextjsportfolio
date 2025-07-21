@@ -22,7 +22,7 @@ export default function FeaturedResourcesSection() {
     <section id="resources" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading title="Featured Resources" subtitle="A collection of my articles and blog posts." />
-        <ScrollAnimationWrapper>
+        <ScrollAnimationWrapper animation="fadeIn">
             <Card className="bg-card border-border/50">
                 <CardContent className="p-6">
                     <div className="divide-y divide-border">

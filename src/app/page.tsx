@@ -20,30 +20,16 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <ScrollAnimationWrapper animation="slideInRight">
-          <AboutSection />
-        </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
-          <EducationSection />
-        </ScrollAnimationWrapper>
+        <AboutSection />
+        <EducationSection />
         <SkillsSection />
-        <ScrollAnimationWrapper>
-          <MyApproachSection />
-        </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper animation="slideInLeft">
-          <ExperienceSection />
-        </ScrollAnimationWrapper>
+        <MyApproachSection />
+        <ExperienceSection />
         <ProjectsSection />
         <CertificationsSection />
-        <ScrollAnimationWrapper>
-          <FeaturedResourcesSection />
-        </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
-          <FaqSection />
-        </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
-          <ContactSection />
-        </ScrollAnimationWrapper>
+        <FeaturedResourcesSection />
+        <FaqSection />
+        <ContactSection />
       </main>
       <ClientOnly>
         <Footer />
