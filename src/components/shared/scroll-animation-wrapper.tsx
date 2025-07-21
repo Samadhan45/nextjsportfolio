@@ -7,7 +7,7 @@ interface ScrollAnimationWrapperProps {
   children: ReactNode;
   className?: string;
   delay?: string;
-  animation?: 'fade-in' | 'fade-up';
+  animation?: 'fade-in' | 'fade-up' | 'fade-left' | 'fade-right';
 }
 
 export default function ScrollAnimationWrapper({
@@ -49,8 +49,12 @@ export default function ScrollAnimationWrapper({
       ref={ref}
       className={cn(
         'transition-all duration-700 ease-out',
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0',
+        isVisible
+          ? 'opacity-100 translate-y-0 translate-x-0'
+          : 'opacity-0',
         { 'translate-y-10': animation === 'fade-up' && !isVisible },
+        { '-translate-x-10': animation === 'fade-left' && !isVisible },
+        { 'translate-x-10': animation === 'fade-right' && !isVisible },
         className
       )}
       style={{ transitionDelay: delay }}

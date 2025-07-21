@@ -26,14 +26,14 @@ const educationHistory = [
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-20 bg-card">
+    <section id="education" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading title="Education" />
         <div className="relative max-w-3xl mx-auto">
           <div className="absolute left-4 top-4 w-0.5 h-full bg-border" aria-hidden="true"></div>
           <div className="space-y-12">
             {educationHistory.map((edu, index) => (
-              <ScrollAnimationWrapper key={index}>
+              <ScrollAnimationWrapper key={index} animation={index % 2 === 0 ? 'fade-right' : 'fade-left'}>
                  <div className="pl-12 relative">
                     <div className="absolute left-0 top-1.5">
                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
