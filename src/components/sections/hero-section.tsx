@@ -12,7 +12,7 @@ export default function HeroSection() {
             <ScrollAnimationWrapper>
               <div className="text-center md:text-left">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                  Hi, I&apos;m <span className="text-primary">Atharva Kote</span>
+                  Hi, I&apos;m <span className="text-primary">Samadhan Kadam</span>
                 </h1>
                 <p className="max-w-xl text-foreground/80 leading-relaxed mb-6 mx-auto md:mx-0">
                   I am a Software Engineering student passionate about building impactful solutions. I specialize in developing software that bridges technology and real-world challenges, ensuring efficiency, usability, and meaningful impact.
@@ -43,7 +43,7 @@ export default function HeroSection() {
             <div className="relative w-80 h-80 mx-auto md:w-96 md:h-96">
                 <Image 
                     src="https://placehold.co/400x400.png"
-                    alt="Atharva Kote"
+                    alt="Samadhan Kadam"
                     width={400}
                     height={400}
                     className="rounded-full object-cover border-4 border-primary/20 shadow-lg grayscale"
