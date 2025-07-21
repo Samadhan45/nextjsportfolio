@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useTheme } from 'next-themes';
 
 
 const navLinks = [
@@ -39,38 +40,49 @@ const navLinks = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
   const [activeLink, setActiveLink] = useState('Home');
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-
+  useEffect(() => setMounted(true), []);
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-      const sections = navLinks.map(l => l.href.startsWith('#') ? document.querySelector(l.href) : null).filter(Boolean);
+      const sections = navLinks.map(l => {
+          if (l.href.startsWith('/#') || l.href.startsWith('#')) {
+            const id = l.href.split('#')[1];
+            return document.getElementById(id);
+          }
+          if(l.dropdown) {
+            l.dropdown.forEach(dl => {
+              if (dl.href.startsWith('#')) {
+                return document.getElementById(dl.href.substring(1));
+              }
+            })
+          }
+          return null;
+        }
+      ).filter(Boolean);
       
       let current = 'Home';
       sections.forEach(section => {
         if (section && window.scrollY >= (section as HTMLElement).offsetTop - 100) {
-          const link = navLinks.find(l => l.href === `#${section.id}`);
+          const link = navLinks.find(l => `#${section.id}` === l.href || (l.dropdown && l.dropdown.some(d => d.href === `#${section.id}`)));
           if (link) current = link.name;
         }
       });
       setActiveLink(current);
     };
-    window.addEventListener('scroll', handleScroll);
-    
-    if (document.documentElement.classList.contains('dark')) {
-      setIsDarkMode(true);
-    } else {
-      setIsDarkMode(false);
-    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleTheme = () => {
-    document.documentElement.classList.toggle('dark');
-    setIsDarkMode(!isDarkMode);
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   }
 
   const renderNavLinks = (isMobile = false) => {
@@ -83,7 +95,7 @@ export default function Header() {
                   {'text-lg w-full justify-center': isMobile},
                   {'px-3': !isMobile}
                 )}
-                data-active={activeLink === link.name || link.dropdown.some(d => d.href === activeLink)}
+                data-active={activeLink === link.name || (link.dropdown && link.dropdown.some(d => activeLink === d.name))}
                 >
                 {link.name} <ChevronDown className="ml-1 h-4 w-4" />
               </Button>
@@ -91,7 +103,10 @@ export default function Header() {
             <DropdownMenuContent>
               {link.dropdown.map(dLink => (
                   <DropdownMenuItem key={dLink.name} asChild>
-                      <Link href={dLink.href} onClick={() => isMobile && setIsMenuOpen(false)}>
+                      <Link href={dLink.href} onClick={() => {
+                        setActiveLink(dLink.name);
+                        if (isMobile) setIsMenuOpen(false)
+                      }}>
                         {dLink.name}
                       </Link>
                   </DropdownMenuItem>
@@ -128,15 +143,15 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="#home" className="text-2xl font-bold text-primary hover:text-glow transition-all">
-            atharva.dev
+            samadhan.dev
           </Link>
           <nav className="hidden md:flex items-center space-x-2">
             {renderNavLinks(false)}
           </nav>
           <div className="hidden md:flex items-center gap-2">
-             <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
+             {mounted && <Button variant="ghost" size="icon" onClick={toggleTheme}>
+              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>}
           </div>
           <div className="md:hidden">
             <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -150,9 +165,9 @@ export default function Header() {
           <nav className="flex flex-col items-center space-y-2 pt-4">
             {renderNavLinks(true)}
              <div className="mt-4">
-                <Button variant="ghost" size="icon" onClick={toggleTheme}>
-                  {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-                </Button>
+                {mounted && <Button variant="ghost" size="icon" onClick={toggleTheme}>
+                  {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                </Button>}
             </div>
           </nav>
         </div>
