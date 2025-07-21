@@ -43,7 +43,7 @@ export default function ProjectsSection() {
         <SectionHeading title="My Projects" subtitle="A selection of projects that showcase my skills and passion for building things." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-             <ScrollAnimationWrapper key={project.title} delay={`${index * 100}ms`}>
+             <ScrollAnimationWrapper key={project.title} style={{ transitionDelay: `${index * 150}ms` }}>
               <Card className="bg-background h-full overflow-hidden group border-border/50 hover:border-primary transition-all duration-300 transform hover:-translate-y-2 card-glow hover:card-glow-hover flex flex-col">
                 <CardHeader>
                    <CardTitle className="text-xl flex items-center gap-2">

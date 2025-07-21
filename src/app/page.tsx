@@ -35,21 +35,15 @@ export default function Home() {
           <ScrollAnimationWrapper>
             <EducationSection />
           </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper>
-            <SkillsSection />
-          </ScrollAnimationWrapper>
+          <SkillsSection />
           <ScrollAnimationWrapper>
             <MyApproachSection />
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper>
             <ExperienceSection />
           </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper>
-            <ProjectsSection />
-          </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper>
-            <CertificationsSection />
-          </ScrollAnimationWrapper>
+          <ProjectsSection />
+          <CertificationsSection />
           <ScrollAnimationWrapper>
             <FeaturedResourcesSection />
           </ScrollAnimationWrapper>
