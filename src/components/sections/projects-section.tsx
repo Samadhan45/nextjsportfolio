@@ -10,7 +10,7 @@ const projects = [
   {
     title: 'Full-Stack Finance WebApp',
     description: "A comprehensive finance management application built with Next.js, Tailwind CSS, Clerk authentication, and Gemini AI integration. Features Google authentication for 100+ users, AI-powered bill scanning that automatically adds 10+ expenses, and efficient data storage with Neon PostgreSQL. Deployed on Vercel for fast, global access with secure session handling.",
-    image: '/finance-dashboard.png',
+    image: 'https://placehold.co/600x400.png',
     dataAiHint: 'finance dashboard',
     liveLink: '#',
     githubLink: '#',
@@ -19,7 +19,7 @@ const projects = [
   {
     title: 'Developer Portfolio Website',
     description: "A clean, responsive portfolio website showcasing live projects using core web development skills. Built with HTML, CSS, and JavaScript, deployed on GitHub Pages with optimized file structure for fast loading and smooth navigation. Achieved 100% mobile responsiveness and cross-browser compatibility.",
-    image: '/portfolio-website.png',
+    image: 'https://placehold.co/600x400.png',
     dataAiHint: 'portfolio website',
     liveLink: '#',
     githubLink: '#',
@@ -28,7 +28,7 @@ const projects = [
   {
     title: 'React.js Analytics Dashboard',
     description: "Led a team of 4 students to build a fully responsive React.js dashboard for internal project tracking and analytics. Designed and developed 10+ reusable components, enhanced UI consistency contributing to 20% faster load times and 100% mobile responsiveness.",
-    image: '/analytics-dashboard.png',
+    image: 'https://placehold.co/600x400.png',
     dataAiHint: 'analytics dashboard',
     liveLink: '#',
     githubLink: '#',
