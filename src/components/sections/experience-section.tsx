@@ -40,9 +40,8 @@ export default function ExperienceSection() {
                           <CardTitle className="text-xl">{exp.role}</CardTitle>
                           <p className="text-sm text-muted-foreground">{exp.period}</p>
                         </div>
-                        <div className="flex items-center gap-2">
-                           <Briefcase className="w-5 h-5 text-primary" />
-                           <p className="font-semibold text-primary">{exp.company}</p>
+                        <div className="flex items-center gap-2 text-primary">
+                           <p className="font-semibold">{exp.company}</p>
                         </div>
                       </CardHeader>
                       <CardContent>
