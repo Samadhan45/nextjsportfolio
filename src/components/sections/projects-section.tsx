@@ -2,11 +2,20 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import SectionHeading from '../shared/section-heading';
-import { ArrowUpRight, Github, Search, Sparkles, KeyRound, Lock, Smartphone, Monitor } from 'lucide-react';
+import { ArrowUpRight, Github, Search, Sparkles, KeyRound, Lock, Smartphone, Monitor, Database, Mail, Shield, BarChart2 } from 'lucide-react';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
 import { Button } from '../ui/button';
 
 const projects = [
+  {
+    title: 'HisabKitab',
+    description: "A full-stack personal finance tracking application that enables users to manage income and expenses, visualize financial insights, and make smarter budgeting decisions with the help of AI—all through a secure and user-friendly interface.",
+    image: 'https://placehold.co/600x400.png',
+    dataAiHint: 'finance tracker dashboard',
+    liveLink: 'https://hisab-kitab-lilac.vercel.app',
+    githubLink: 'https://github.com/Samadhan45/HisabKitab',
+    tags: ['Next.js 14', 'TailwindCSS', 'Prisma ORM', 'Clerk', 'Gemini API', 'Resend', 'Arcjet', 'Chart.js'],
+  },
   {
     title: 'Firebase Studio',
     description: "A powerful and modern document organizing application built with Next.js and Firebase. Helps users upload, manage, and search documents with AI-powered features in a sleek, responsive interface. Supports real-time updates, light/dark mode, secure Firebase Authentication, and document export in PDF/JPEG formats.",
@@ -39,10 +48,11 @@ const projects = [
 
 // Tech Icons Mapping
 const iconComponents: { [key: string]: React.ComponentType } = {
+  'Next.js 14': NextjsIcon,
   'Next.js': NextjsIcon,
   'TailwindCSS': TailwindCssIcon,
   'Clerk': ClerkIcon,
-  'Gemini AI': GeminiIcon,
+  'Gemini API': GeminiIcon,
   'PostgreSQL': DatabaseIcon,
   'HTML5': Html5Icon,
   'CSS3': Css3Icon,
@@ -59,6 +69,10 @@ const iconComponents: { [key: string]: React.ComponentType } = {
   'MongoDB': MongoDbIcon,
   'JWT': JwtIcon,
   'Responsive Design': ResponsiveIcon,
+  'Prisma ORM': PrismaIcon,
+  'Resend': ResendIcon,
+  'Arcjet': ArcjetIcon,
+  'Chart.js': ChartjsIcon,
 };
 
 
@@ -128,6 +142,23 @@ export default function ProjectsSection() {
 
 
 // Icon Components
+function PrismaIcon() {
+  return <Database />;
+}
+
+function ResendIcon() {
+  return <Mail />;
+}
+
+function ArcjetIcon() {
+  return <Shield />;
+}
+
+function ChartjsIcon() {
+  return <BarChart2 />;
+}
+
+
 function Html5Icon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -288,6 +319,8 @@ function ResponsiveIcon() {
     </div>
   )
 }
+
+    
 
     
 
