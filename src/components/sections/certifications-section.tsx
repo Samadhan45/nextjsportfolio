@@ -1,3 +1,4 @@
+
 import SectionHeading from '../shared/section-heading';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -42,7 +43,7 @@ const achievements = [
     issuer: 'International Research Journal Of Modernization in Engineering Technology and Science (IRJMETS)',
     description: 'Published paper discussing the integration of AI and automation for effective social media monitoring.',
     date: 'Jan 2025',
-    link: 'https://drive.google.com/file/d/1AGYI2TJ-BZBahDW8ceBVHGaW4oFtynT/view?usp=drivesdk',
+    link: 'https://drive.google.com/file/d/1AGYl2TJ-BZBahDW8ceBVHGaW4oFtJynT/view?usp=sharing',
     variant: 'honor',
   },
   {
@@ -52,7 +53,7 @@ const achievements = [
     issuer: 'Great Learning',
     description: 'Completed the Digital Marketing course by Great Learning, covering SEO, SEM, email campaigns, and social media strategies.',
     date: 'Jan 2025',
-    link: 'https://drive.google.com/file/d/1ASxRtW-swIxFLjQeG9tRK3Qsokr8KloP/view?usp=drivesdk',
+    link: 'https://drive.google.com/file/d/1ASxRtW-swIxFLjQeG9tRK3Qsokr81KoP/view?usp=sharing',
     variant: 'default',
   },
   {
@@ -62,7 +63,7 @@ const achievements = [
     issuer: 'Great Learning',
     description: 'Certified in Android app development via Great Learning’s Android course, including UI components, layouts, and backend integration.',
     date: 'Jan 2025',
-    link: 'https://drive.google.com/file/d/1ATEBHVl3QGH-Yn1_L1Pb3c5U5E0E8-d4/view?usp=drivesdk',
+    link: 'https://drive.google.com/file/d/1ATEBHVL3QGH-Yn1_L1Pb3c5U5E0E8-dd/view?usp=sharing',
     variant: 'default',
   },
   {
@@ -72,7 +73,7 @@ const achievements = [
     issuer: 'Simplilearn',
     description: 'Completed Introduction to C++ by Simplilearn, learning programming basics, data types, and control structures.',
     date: 'Jan 2025',
-    link: 'https://drive.google.com/file/d/1AVBcuKEM4zeWQ2T-K7g7YL-BK04gNChlK/view?usp=drivesdk',
+    link: 'https://drive.google.com/file/d/1AVBcuKEM4zeWQ2T-K7g7YL-BK04gNcHL/view?usp=sharing',
     variant: 'default',
   },
   {
@@ -82,7 +83,7 @@ const achievements = [
     issuer: 'Simplilearn',
     description: 'Completed Advanced C++ course from Simplilearn, covering OOP principles, STL, and memory management.',
     date: 'Jan 2025',
-    link: 'https://drive.google.com/file/d/1AekdWTgfsLp00KcQa5r8gVbjxcalnRP/view?usp=drivesdk',
+    link: 'https://drive.google.com/file/d/1AekdWTgfsLp00KcQq5r8gVbjxcaIdnRP/view?usp=sharing',
     variant: 'default',
   },
 ];
