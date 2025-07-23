@@ -1,7 +1,8 @@
 import SectionHeading from '../shared/section-heading';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
-import { Briefcase } from 'lucide-react';
+import { Briefcase, FileText } from 'lucide-react';
+import { Button } from '../ui/button';
 
 const experiences = [
   {
@@ -9,12 +10,14 @@ const experiences = [
     role: 'Web Development Intern',
     period: 'Oct 2024 - Nov 2024',
     description: "Developed secure, full-stack web applications using Django and Python, focusing on admin dashboard and user role management. Implemented authentication systems using Django's built-in security features and learned end-to-end deployment workflows including environment setup and domain integrations.",
+    certificateLink: 'https://drive.google.com/file/d/1EpMT-XXvzgy45JhvGAKfFmVwHbEAE785/view?usp=sharing'
   },
   {
     company: 'Social Digital Wings',
     role: 'Web Development Intern',
     period: 'Apr 2021 - May 2021',
     description: "Led a team of 4 students to build responsive React.js applications. Designed and developed 10+ reusable components using modern web technologies, enhancing UI consistency and performance optimization.",
+    certificateLink: 'https://drive.google.com/file/d/196YnWszgxhaBxToSMKmAFOYNh1A8lkQK/view?usp=sharing'
   },
 ];
 
@@ -46,6 +49,11 @@ export default function ExperienceSection() {
                       </CardHeader>
                       <CardContent>
                         <CardDescription>{exp.description}</CardDescription>
+                         <Button asChild variant="link" className="p-0 h-auto mt-4">
+                           <a href={exp.certificateLink} target="_blank" rel="noopener noreferrer">
+                              <FileText className="mr-2 h-4 w-4" /> View Certificate
+                           </a>
+                         </Button>
                       </CardContent>
                     </Card>
                  </div>
