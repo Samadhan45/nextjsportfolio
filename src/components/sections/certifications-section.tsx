@@ -3,7 +3,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowUpRight, Building, BookOpen, Award } from 'lucide-react';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
-import { Button } from '../ui/button';
 
 const achievements = [
   {
@@ -23,7 +22,7 @@ const achievements = [
     issuer: 'Social Digital Wings',
     description: 'Certified training program in digital technology and social platforms, focusing on communication tools, digital skills, and professional media presence.',
     date: 'Jan 2025',
-    link: 'https://drive.google.com/file/d/1A5zH_R8KCGGIDk2yeBkAXhP380y96BbH/view?usp=drivesdk',
+    link: 'https://drive.google.com/file/d/1A5zH_R8KCGGlDk2yeBkAXhP380y96BbH/view?usp=drive_link',
     variant: 'default',
   },
   {
