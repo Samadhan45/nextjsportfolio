@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import SectionHeading from '../shared/section-heading';
-import { ArrowUpRight, Github, Search, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Github, Search, Sparkles, KeyRound, Lock } from 'lucide-react';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
 import { Button } from '../ui/button';
 
@@ -17,13 +17,13 @@ const projects = [
     tags: ['Next.js', 'TailwindCSS', 'Firebase', 'Firestore', 'AI Search'],
   },
   {
-    title: 'Full-Stack Finance WebApp',
-    description: "A comprehensive finance management application built with Next.js, Tailwind CSS, Clerk authentication, and Gemini AI integration. Features Google authentication for 100+ users, AI-powered bill scanning that automatically adds 10+ expenses, and efficient data storage with Neon PostgreSQL. Deployed on Vercel for fast, global access with secure session handling.",
+    title: 'Bhojan Planner',
+    description: "A modern meal planning web app that simplifies food routines, reduces waste, and helps users plan meals smartly. Designed for individuals and families to organize weekly meals, discover recipes, manage pantry stock, and even share surplus food locally.",
     image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'finance dashboard',
-    liveLink: 'https://bhojan-one.vercel.app/',
+    dataAiHint: 'meal planner dashboard',
+    liveLink: 'https://bhojan-one.vercel.app',
     githubLink: 'https://github.com/Samadhan45/bhojan',
-    tags: ['Next.js', 'TailwindCSS', 'Clerk', 'Gemini AI', 'PostgreSQL'],
+    tags: ['React.js', 'TailwindCSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
   },
   {
     title: 'Developer Portfolio Website',
@@ -63,6 +63,10 @@ const iconComponents: { [key: string]: React.ComponentType } = {
   'Firebase': FirebaseIcon,
   'Firestore': DatabaseIcon,
   'AI Search': AiSearchIcon,
+  'Node.js': NodejsIcon,
+  'Express.js': ExpressIcon,
+  'MongoDB': MongoDbIcon,
+  'JWT': JwtIcon,
 };
 
 
@@ -201,6 +205,37 @@ function GeminiIcon() {
     )
 }
 
+function NodejsIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M11.23.36c.2-.36.56-.36.74 0l10.5 18.18c.2.36.02.82-.37.82H1.1c-.39 0-.57-.46-.37-.82L11.23.36zM12 18.4V7.6m-9 10.8h18" />
+    </svg>
+  );
+}
+
+function ExpressIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 5H16"/>
+      <path d="M9 9L15 15"/>
+      <path d="M15 9L9 15"/>
+    </svg>
+  );
+}
+
+function MongoDbIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+      <path d="M14 12c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2z"/>
+      <path d="M15 17c-1.66 0-3-1.34-3-3"/>
+    </svg>
+  );
+}
+
+function JwtIcon() {
+  return <KeyRound />;
+}
 
 function DatabaseIcon() {
   return (
@@ -252,4 +287,5 @@ function AiSearchIcon() {
         </div>
     )
 }
+
     
