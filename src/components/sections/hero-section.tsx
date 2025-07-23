@@ -41,13 +41,12 @@ export default function HeroSection() {
           
             <ScrollAnimationWrapper animation="slideInRight" className="w-full">
               <div className="relative w-80 h-80 mx-auto md:w-96 md:h-96">
-                  <Image 
+                  <img 
                       src="/samadhan-kadam-portrait.png"
                       alt="Samadhan Kadam"
-                      width={400}
-                      height={400}
+                      width="400"
+                      height="400"
                       className="rounded-full object-cover border-4 border-primary/20 shadow-lg"
-                      priority
                   />
               </div>
             </ScrollAnimationWrapper>
