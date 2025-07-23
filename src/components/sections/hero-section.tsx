@@ -29,7 +29,7 @@ export default function HeroSection() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
                 <Button asChild className="w-full sm:w-auto">
-                  <a href="/samadhan-kadam-resume.pdf" download>
+                  <a href="https://drive.google.com/file/d/1Q-R_a5TGlkyxbwOLuUCViSFb65oTkenU/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                     <Download className="mr-2 h-4 w-4" />
                     Download Resume
                   </a>
