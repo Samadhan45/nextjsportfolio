@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import SectionHeading from '../shared/section-heading';
-import { ArrowUpRight, Github, Search, Sparkles, KeyRound, Lock } from 'lucide-react';
+import { ArrowUpRight, Github, Search, Sparkles, KeyRound, Lock, Smartphone, Monitor } from 'lucide-react';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
 import { Button } from '../ui/button';
 
@@ -26,13 +26,13 @@ const projects = [
     tags: ['React.js', 'TailwindCSS', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
   },
   {
-    title: 'Developer Portfolio Website',
-    description: "A clean, responsive portfolio website showcasing live projects using core web development skills. Built with HTML, CSS, and JavaScript, deployed on GitHub Pages with optimized file structure for fast loading and smooth navigation. Achieved 100% mobile responsiveness and cross-browser compatibility.",
+    title: 'Personal Portfolio Website',
+    description: "A modern, responsive portfolio showcasing my skills, projects, and experience as a Full Stack Developer. Built to highlight clean UI, smooth navigation, and real-world development expertise in both frontend and backend technologies.",
     image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'portfolio website',
-    liveLink: '#',
-    githubLink: '#',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'GitHub'],
+    dataAiHint: 'developer portfolio website',
+    liveLink: 'https://samadhan45.github.io/portfolio/',
+    githubLink: 'https://github.com/Samadhan45/newportfolio',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Responsive Design'],
   },
   {
     title: 'React.js Analytics Dashboard',
@@ -67,6 +67,7 @@ const iconComponents: { [key: string]: React.ComponentType } = {
   'Express.js': ExpressIcon,
   'MongoDB': MongoDbIcon,
   'JWT': JwtIcon,
+  'Responsive Design': ResponsiveIcon,
 };
 
 
@@ -286,6 +287,15 @@ function AiSearchIcon() {
             <Sparkles className="w-5 h-5 absolute top-0 left-0" />
         </div>
     )
+}
+
+function ResponsiveIcon() {
+  return (
+    <div className="relative w-full h-full">
+        <Smartphone className="w-5 h-5 absolute bottom-0 left-0" />
+        <Monitor className="w-6 h-6 absolute top-0 right-0" />
+    </div>
+  )
 }
 
     
