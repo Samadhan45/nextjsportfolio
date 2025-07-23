@@ -22,10 +22,10 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
-        <MyApproachSection />
         <ProjectsSection />
         <ExperienceSection />
         <EducationSection />
+        <MyApproachSection />
         <CertificationsSection />
         <FeaturedResourcesSection />
         <FaqSection />
