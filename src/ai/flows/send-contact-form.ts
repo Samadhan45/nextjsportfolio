@@ -10,6 +10,7 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
+import { Resend } from 'resend';
 
 const ContactFormInputSchema = z.object({
   name: z.string().describe('The name of the person sending the message.'),
@@ -35,17 +36,27 @@ const sendContactFormFlow = ai.defineFlow(
     outputSchema: ContactFormOutputSchema,
   },
   async (input) => {
-    
-    // In a real application, you would integrate with an email sending service
-    // like Resend, SendGrid, or others. For this example, we will just log
-    // the message to the console.
-    console.log('New contact form submission:');
-    console.log('Name:', input.name);
-    console.log('Email:', input.email);
-    console.log('Subject:', input.subject);
-    console.log('Message:', input.message);
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
-    // Simulate a successful response.
-    return { success: true };
+    try {
+      await resend.emails.send({
+        from: 'Portfolio Contact Form <onboarding@resend.dev>',
+        to: 'samadhankadam002@gmail.com',
+        subject: `New message from ${input.name}: ${input.subject}`,
+        reply_to: input.email,
+        html: `
+          <p>You have a new contact form submission from your portfolio:</p>
+          <p><strong>Name:</strong> ${input.name}</p>
+          <p><strong>Email:</strong> ${input.email}</p>
+          <p><strong>Subject:</strong> ${input.subject}</p>
+          <p><strong>Message:</strong></p>
+          <p>${input.message}</p>
+        `,
+      });
+      return { success: true };
+    } catch (error) {
+      console.error('Error sending email:', error);
+      return { success: false };
+    }
   }
 );
