@@ -47,7 +47,7 @@ const projects = [
 
 
 // Tech Icons Mapping
-const iconComponents: { [key: string]: React.ComponentType } = {
+const iconComponents: { [key: string]: React.ComponentType<any> } = {
   'Next.js 14': NextjsIcon,
   'Next.js': NextjsIcon,
   'TailwindCSS': TailwindCssIcon,
@@ -325,4 +325,5 @@ function ResponsiveIcon() {
     
 
     
+
 
