@@ -10,7 +10,7 @@ const projects = [
   {
     title: 'HisabKitab',
     description: "A full-stack personal finance tracking application that enables users to manage income and expenses, visualize financial insights, and make smarter budgeting decisions with the help of AI—all through a secure and user-friendly interface.",
-    image: 'https://placehold.co/600x400.png',
+    image: '/hisabkitab.jpg',
     dataAiHint: 'finance tracker dashboard',
     liveLink: 'https://hisab-kitab-lilac.vercel.app',
     githubLink: 'https://github.com/Samadhan45/HisabKitab',
@@ -28,7 +28,7 @@ const projects = [
   {
     title: 'Bhojan Planner',
     description: "A modern meal planning web app that simplifies food routines, reduces waste, and helps users plan meals smartly. Designed for individuals and families to organize weekly meals, discover recipes, manage pantry stock, and even share surplus food locally.",
-    image: 'https://placehold.co/600x400.png',
+    image: '/bhojan.jpg',
     dataAiHint: 'meal planner dashboard',
     liveLink: 'https://bhojan-one.vercel.app',
     githubLink: 'https://github.com/Samadhan45/bhojan',
@@ -37,9 +37,9 @@ const projects = [
   {
     title: 'Personal Portfolio Website',
     description: "A modern, responsive portfolio showcasing my skills, projects, and experience as a Full Stack Developer. Built to highlight clean UI, smooth navigation, and real-world development expertise in both frontend and backend technologies.",
-    image: 'https://placehold.co/600x400.png',
+    image: '/newportfolio.jpg',
     dataAiHint: 'developer portfolio website',
-    liveLink: 'https://samadhan45.github.io/portfolio/',
+    liveLink: 'https://samadhan45.github.io/newportfolio/',
     githubLink: 'https://github.com/Samadhan45/newportfolio',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Responsive Design'],
   },
@@ -325,3 +325,4 @@ function ResponsiveIcon() {
     
 
     
+
