@@ -9,7 +9,7 @@ const facts = [
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
-        viewBox="0 0 24 24"
+        viewBox="0 0 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -23,8 +23,8 @@ const facts = [
         <line x1="3" x2="21" y1="10" y2="10" />
       </svg>
     ),
-    title: 'Software Engineer',
-    description: 'Building scalable web applications using MERN stack and AI-powered solutions',
+    title: '🚀 Software Engineer',
+    description: 'Building scalable web applications using the MERN stack, Java, and AI tools like Gemini AI. Passionate about delivering clean, efficient, and impactful digital solutions.',
   },
   {
     icon: (
@@ -32,7 +32,7 @@ const facts = [
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
-        viewBox="0 0 24 24"
+        viewBox="0 0 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -44,8 +44,8 @@ const facts = [
         <polyline points="8 6 2 12 8 18" />
       </svg>
     ),
-    title: 'Problem Solver',
-    description: 'Solved 200+ DSA problems on LeetCode, mastering algorithms & data structures',
+    title: '🧠 Problem Solver',
+    description: 'Strong in debugging and logic building with solid foundations in Java, C++, and Python. Continuously learning and applying algorithms to real-world challenges.',
   },
   {
     icon: (
@@ -53,7 +53,7 @@ const facts = [
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
-          viewBox="0 0 24 24"
+          viewBox="0 0 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -65,8 +65,8 @@ const facts = [
           <path d="M9 18c-4.51 2-5-2-7-2" />
         </svg>
     ),
-    title: 'Open Source Contributor',
-    description: 'Collaborating on projects like Zero Hunger, improving social impact tech',
+    title: '🌍 Open Source Contributor',
+    description: 'Contributed to impactful tech initiatives like Zero Hunger, helping enhance UI, fix bugs, and collaborate with teams for social good.',
   },
   {
     icon: (
@@ -74,7 +74,7 @@ const facts = [
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
-        viewBox="0 0 24 24"
+        viewBox="0 0 24"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
@@ -87,8 +87,8 @@ const facts = [
         <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
       </svg>
     ),
-    title: 'Backend Developer',
-    description: 'Managing databases, authentication, and APIs for high-performance applications',
+    title: '🔧 Backend Developer',
+    description: 'Experienced in Django, Node.js, PostgreSQL, and authentication systems like Clerk. Handle secure session management, API integration, and performance-focused backend logic.',
   },
   {
     icon: (
@@ -96,7 +96,7 @@ const facts = [
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
-          viewBox="0 0 24 24"
+          viewBox="0 0 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -108,8 +108,8 @@ const facts = [
           <path d="m17.6 17.6-1.58 1.58a2 2 0 0 1-2.82 0L9 15" />
         </svg>
     ),
-    title: 'Hackathon Enthusiast',
-    description: 'Participated in coding competitions and continuously learning new technologies',
+    title: '⚡ Hackathon & Project Builder',
+    description: 'Created full-stack apps like Kharcha (AI-powered finance app) and a personal portfolio website. Always exploring new technologies through hands-on projects and internships.',
   },
 ];
 
