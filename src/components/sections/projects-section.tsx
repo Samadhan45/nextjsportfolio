@@ -34,15 +34,6 @@ const projects = [
     githubLink: 'https://github.com/Samadhan45/newportfolio',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Responsive Design'],
   },
-  {
-    title: 'React.js Analytics Dashboard',
-    description: "Led a team of 4 students to build a fully responsive React.js dashboard for internal project tracking and analytics. Designed and developed 10+ reusable components, enhanced UI consistency contributing to 20% faster load times and 100% mobile responsiveness.",
-    image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'analytics dashboard',
-    liveLink: '#',
-    githubLink: '#',
-    tags: ['React.js', 'Team Leadership', 'Jira'],
-  },
 ];
 
 
@@ -297,5 +288,7 @@ function ResponsiveIcon() {
     </div>
   )
 }
+
+    
 
     
