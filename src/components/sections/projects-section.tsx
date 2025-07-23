@@ -2,18 +2,27 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import SectionHeading from '../shared/section-heading';
-import { ArrowUpRight, Github } from 'lucide-react';
+import { ArrowUpRight, Github, Search, Sparkles } from 'lucide-react';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
 import { Button } from '../ui/button';
 
 const projects = [
   {
+    title: 'Firebase Studio',
+    description: "A powerful and modern document organizing application built with Next.js and Firebase. Helps users upload, manage, and search documents with AI-powered features in a sleek, responsive interface. Supports real-time updates, light/dark mode, secure Firebase Authentication, and document export in PDF/JPEG formats.",
+    image: 'https://placehold.co/600x400.png',
+    dataAiHint: 'document management dashboard',
+    liveLink: 'https://studio-lovat-pi.vercel.app',
+    githubLink: 'https://github.com/Samadhan45/firebase-studio',
+    tags: ['Next.js', 'TailwindCSS', 'Firebase', 'Firestore', 'AI Search'],
+  },
+  {
     title: 'Full-Stack Finance WebApp',
     description: "A comprehensive finance management application built with Next.js, Tailwind CSS, Clerk authentication, and Gemini AI integration. Features Google authentication for 100+ users, AI-powered bill scanning that automatically adds 10+ expenses, and efficient data storage with Neon PostgreSQL. Deployed on Vercel for fast, global access with secure session handling.",
     image: 'https://placehold.co/600x400.png',
     dataAiHint: 'finance dashboard',
-    liveLink: '#',
-    githubLink: '#',
+    liveLink: 'https://bhojan-one.vercel.app/',
+    githubLink: 'https://github.com/Samadhan45/bhojan',
     tags: ['Next.js', 'TailwindCSS', 'Clerk', 'Gemini AI', 'PostgreSQL'],
   },
   {
@@ -51,6 +60,9 @@ const iconComponents: { [key: string]: React.ComponentType } = {
   'React.js': ReactIcon,
   'Team Leadership': TeamIcon,
   'Jira': JiraIcon,
+  'Firebase': FirebaseIcon,
+  'Firestore': DatabaseIcon,
+  'AI Search': AiSearchIcon,
 };
 
 
@@ -59,7 +71,7 @@ export default function ProjectsSection() {
     <section id="projects" className="py-20 bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading title="My Projects" subtitle="A selection of projects that showcase my skills and passion for building things." />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
              <ScrollAnimationWrapper key={project.title} animation="slideInUp" delay={index * 100}>
               <Card className="bg-background h-full overflow-hidden group border-border/50 hover:border-primary transition-all duration-300 ease-in-out transform hover:-translate-y-2 card-glow hover:card-glow-hover flex flex-col">
@@ -85,12 +97,13 @@ export default function ProjectsSection() {
                   <div className="flex flex-wrap gap-4 mb-4">
                     {project.tags.map(tag => {
                       const Icon = iconComponents[tag];
+                      const tagLabel = tag === 'Firestore' ? 'Firestore' : tag;
                       return Icon ? (
                         <div key={tag} className="flex flex-col items-center justify-center gap-2">
                            <div className="w-8 h-8 text-primary">
                              <Icon />
                            </div>
-                           <p className="text-xs text-center text-muted-foreground">{tag}</p>
+                           <p className="text-xs text-center text-muted-foreground">{tagLabel}</p>
                         </div>
                       ) : null;
                     })}
@@ -183,7 +196,7 @@ function ClerkIcon() {
 function GeminiIcon() {
     return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.93 15.28l-3.35-3.35 1.41-1.41 1.94 1.94 4.24-4.24 1.41 1.41-5.65 5.65zm5.95-8.22c-.42-.7-1.05-1.24-1.84-1.57-.79-.33-1.68-.42-2.55-.23-.87.19-1.66.6-2.28 1.22s-1.03.95-1.22 1.82c-.19.87-.09 1.76.23 2.55.33.79.87 1.42 1.57 1.84s1.46.6 2.28.6c.82 0 1.61-.2 2.3-.6.69-.39 1.28-.95 1.72-1.62l-1.42-1.42c-.28.42-.67.75-1.12.96-.45.21-.95.3-1.46.25-.51-.05-1-.24-1.41-.55s-.72-.73-.9-1.2c-.18-.47-.23-.97-.13-1.46.1-.49.34-.94.7-1.31s.82-.6 1.31-.7c.49-.1.99-.05 1.46.13.47.18.89.47 1.2.86l1.42-1.42z"/>
+        <path d="m12.33 12.83-1.07-1.06-1.06-1.06-1.06-1.06-1.06 1.06-1.06 1.06-1.06 1.06 1.06 1.06 1.06 1.06 1.06 1.06 1.06-1.06 1.06-1.06 1.06-1.06zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
     </svg>
     )
 }
@@ -223,4 +236,20 @@ function JiraIcon() {
   );
 }
 
+function FirebaseIcon() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5.18 18.73l6.82-13.46.44-4.27-6.32 10.9L5.18 18.73zM18.82.01L6.42 16.4l-1.06 2.76 10-6.83L18.82.01zM18.82.01l-4.44 11.5L12 18.4l6.82-4.94L18.82.01z" />
+        </svg>
+    )
+}
+
+function AiSearchIcon() {
+    return (
+        <div className="relative w-full h-full">
+            <Search className="w-6 h-6 absolute bottom-1 right-1" />
+            <Sparkles className="w-5 h-5 absolute top-0 left-0" />
+        </div>
+    )
+}
     
