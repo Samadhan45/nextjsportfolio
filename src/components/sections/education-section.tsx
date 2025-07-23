@@ -46,7 +46,10 @@ export default function EducationSection() {
                           <CardTitle className="text-xl">{edu.degree}</CardTitle>
                           <p className="text-sm text-muted-foreground">{edu.period}</p>
                         </div>
-                        <p className="font-semibold text-primary">{edu.institution}</p>
+                        <div className="flex items-center gap-2">
+                           <GraduationCap className="w-5 h-5 text-primary" />
+                           <p className="font-semibold text-primary">{edu.institution}</p>
+                        </div>
                       </CardHeader>
                       <CardContent>
                         <CardDescription>{edu.status}</CardDescription>
