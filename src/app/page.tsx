@@ -7,7 +7,6 @@ import ExperienceSection from '@/components/sections/experience-section';
 import ProjectsSection from '@/components/sections/projects-section';
 import EducationSection from '@/components/sections/education-section';
 import CertificationsSection from '@/components/sections/certifications-section';
-import FeaturedResourcesSection from '@/components/sections/featured-resources-section';
 import FaqSection from '@/components/sections/faq-section';
 import ContactSection from '@/components/sections/contact-section';
 import Footer from '@/components/layout/footer';
@@ -27,7 +26,6 @@ export default function Home() {
         <ExperienceSection />
         <MyApproachSection />
         <CertificationsSection />
-        <FeaturedResourcesSection />
         <FaqSection />
         <ContactSection />
       </main>
