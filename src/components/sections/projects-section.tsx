@@ -19,7 +19,7 @@ const projects = [
   {
     title: 'CertVault ai document organiser',
     description: "A powerful and modern document organizing application built with Next.js and Firebase. Helps users upload, manage, and search documents with AI-powered features in a sleek, responsive interface. Supports real-time updates, light/dark mode, secure Firebase Authentication, and document export in PDF/JPEG formats.",
-    image: 'https://firebasestudio-hosting.web.app/images/CertVaultAIDocumentOrganiser.png',
+    image: '/certvault.jpg',
     dataAiHint: 'document organiser',
     liveLink: 'https://studio-lovat-pi.vercel.app',
     githubLink: 'https://github.com/Samadhan45/firebase-studio',
