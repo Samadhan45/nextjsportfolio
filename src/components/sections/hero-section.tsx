@@ -11,7 +11,7 @@ export default function HeroSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollAnimationWrapper animation="slideInLeft" className="w-full">
               <div className="text-center md:text-left">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4 text-glow">
                   Hi, I&apos;m <span className="text-primary">Samadhan Kadam</span>
                 </h1>
                 <p className="max-w-xl text-foreground/80 leading-relaxed mb-6 mx-auto md:mx-0">
