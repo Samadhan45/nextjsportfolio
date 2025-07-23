@@ -10,7 +10,7 @@ const educationHistory = [
     institution: 'Alard College Of Engineering, Pune | SPPU',
     period: '2020 - 2024',
     status: 'Completed',
-    image: 'https://placehold.co/400x200.png',
+    image: '/college.jpg',
     dataAiHint: 'university campus'
   },
   {
@@ -18,7 +18,7 @@ const educationHistory = [
     institution: 'Balaji College Of Arts, Commerce & Science, Pune',
     period: '2019 - 2021',
     status: 'Completed',
-    image: 'https://placehold.co/400x200.png',
+    image: '/school.jpg',
     dataAiHint: 'college building'
   },
   {
@@ -26,7 +26,7 @@ const educationHistory = [
     institution: 'Laxmibai Barne Vidyalaya, Pune',
     period: '2009 - 2019',
     status: 'Completed',
-    image: 'https://placehold.co/400x200.png',
+    image: '/barneschool.jpg',
     dataAiHint: 'school building'
   },
 ];
