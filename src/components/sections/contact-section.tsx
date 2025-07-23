@@ -11,6 +11,7 @@ import { Mail, Phone, Send } from 'lucide-react';
 import SocialIcons from '../shared/social-icons';
 import { useToast } from '@/hooks/use-toast';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
+import { sendContactForm } from '@/ai/flows/send-contact-form';
 
 type FormValues = {
   name: string;
@@ -20,21 +21,29 @@ type FormValues = {
 };
 
 export default function ContactSection() {
-  const { register, handleSubmit, reset } = useForm<FormValues>();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>();
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log(data);
-    setIsLoading(false);
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    })
-    reset();
+    try {
+      await sendContactForm(data);
+      toast({
+        title: "Message Sent!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
+      reset();
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
