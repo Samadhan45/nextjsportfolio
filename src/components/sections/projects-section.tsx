@@ -8,15 +8,6 @@ import { Button } from '../ui/button';
 
 const projects = [
   {
-    title: 'Bhojan - Full-Stack Finance WebApp',
-    description: "A comprehensive finance management application built with modern technologies including Next.js, Tailwind CSS, Clerk authentication, Gemini AI integration, and PostgreSQL. Highlights include Google Auth for 100+ users, AI-powered bill scanning, secure PostgreSQL storage via Neon, and deployment on Vercel.",
-    image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'finance dashboard',
-    liveLink: 'https://bhojan-one.vercel.app/',
-    githubLink: 'https://github.com/Samadhan45/bhojan',
-    tags: ['Next.js', 'TailwindCSS', 'Clerk', 'Gemini AI', 'PostgreSQL'],
-  },
-  {
     title: 'Full-Stack Finance WebApp',
     description: "A comprehensive finance management application built with Next.js, Tailwind CSS, Clerk authentication, and Gemini AI integration. Features Google authentication for 100+ users, AI-powered bill scanning that automatically adds 10+ expenses, and efficient data storage with Neon PostgreSQL. Deployed on Vercel for fast, global access with secure session handling.",
     image: 'https://placehold.co/600x400.png',
