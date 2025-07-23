@@ -116,14 +116,6 @@ export default function CertificationsSection() {
             </ScrollAnimationWrapper>
           ))}
         </div>
-        <div className="text-center mt-12">
-          <ScrollAnimationWrapper>
-            <Button>
-                <Award className="mr-2 h-4 w-4" />
-                See All Achievements
-            </Button>
-          </ScrollAnimationWrapper>
-        </div>
       </div>
     </section>
   );
