@@ -1,45 +1,89 @@
 import SectionHeading from '../shared/section-heading';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowUpRight, Building, BookOpen, Trophy, Award } from 'lucide-react';
+import { ArrowUpRight, Building, BookOpen, Award } from 'lucide-react';
 import ScrollAnimationWrapper from '../shared/scroll-animation-wrapper';
 import { Button } from '../ui/button';
 
 const achievements = [
   {
     type: 'Certification',
-    title: 'AWS Cloud Foundations',
+    title: 'Google Technical Support Fundamentals',
     issuerIcon: <Building className="w-4 h-4" />,
-    issuer: 'Amazon Web Services (AWS)',
-    description: 'Certified AWS Cloud Foundations Certification, demonstrating foundational knowledge of AWS services, cloud concepts, and best practices.',
+    issuer: 'Coursera – Offered by Google',
+    description: 'Completed Google’s Technical Support Fundamentals course on Coursera, covering foundational IT skills including troubleshooting, system administration, and networking basics.',
     date: 'Jan 2025',
+    link: 'https://www.coursera.org/account/accomplishments/verify/DZQDVCWQS843?utm_source%3Dandroid%26utm_medium%3Dcertificate%26utm_content%3Dcert_image%26utm_campaign%3Dsharing_cta%26utm_product%3Dcourse',
     variant: 'default',
   },
   {
     type: 'Certification',
-    title: 'MongoDB Developer Certification',
+    title: 'Social Digital Wings',
     issuerIcon: <Building className="w-4 h-4" />,
-    issuer: 'MongoDB Inc.',
-    description: 'Achieved MongoDB Developer Certification, demonstrating proficiency in schema design, aggregation, and performance optimization.',
-    date: 'Mar 2025',
+    issuer: 'Social Digital Wings',
+    description: 'Certified training program in digital technology and social platforms, focusing on communication tools, digital skills, and professional media presence.',
+    date: 'Jan 2025',
+    link: 'https://drive.google.com/file/d/1A5zH_R8KCGGIDk2yeBkAXhP380y96BbH/view?usp=drivesdk',
     variant: 'default',
   },
   {
-    type: 'Honor',
-    title: 'Honored by Hon. Amit Dada Kolhe.',
-    issuerIcon: <Trophy className="w-4 h-4" />,
-    issuer: 'Tech Community',
-    description: 'Recognized for outstanding mentorship and guidance in the field of software development.',
-    date: 'Mar 2025',
+    type: 'Certification',
+    title: 'Elite Software Training',
+    issuerIcon: <Building className="w-4 h-4" />,
+    issuer: 'Elite Software',
+    description: 'Certified training in software development fundamentals, tools, and industry practices for modern tech applications.',
+    date: 'Jan 2025',
+    link: 'https://drive.google.com/file/d/1A6ZBck4hsBwWbw12dHrSz66fv5tp8x7o/view?usp=drivesdk',
+    variant: 'default',
+  },
+  {
+    type: 'Research Paper',
+    title: 'All Social Media Management and Monitoring System',
+    issuerIcon: <BookOpen className="w-4 h-4" />,
+    issuer: 'International Research Journal Of Modernization in Engineering Technology and Science (IRJMETS)',
+    description: 'Published paper discussing the integration of AI and automation for effective social media monitoring.',
+    date: 'Jan 2025',
+    link: 'https://drive.google.com/file/d/1AGYI2TJ-BZBahDW8ceBVHGaW4oFtynT/view?usp=drivesdk',
     variant: 'honor',
   },
   {
-    type: 'Achievement',
-    title: '200 Questions on LeetCode',
-    issuerIcon: <BookOpen className="w-4 h-4" />,
-    issuer: 'LeetCode',
-    description: 'Solved 200+ Data Structures and Algorithms questions on LeetCode, showcasing strong problem-solving skills and algorithmic proficiency.',
-    date: 'Mar 2025',
+    type: 'Certification',
+    title: 'Digital Marketing',
+    issuerIcon: <Building className="w-4 h-4" />,
+    issuer: 'Great Learning',
+    description: 'Completed the Digital Marketing course by Great Learning, covering SEO, SEM, email campaigns, and social media strategies.',
+    date: 'Jan 2025',
+    link: 'https://drive.google.com/file/d/1ASxRtW-swIxFLjQeG9tRK3Qsokr8KloP/view?usp=drivesdk',
+    variant: 'default',
+  },
+  {
+    type: 'Certification',
+    title: 'Android Development',
+    issuerIcon: <Building className="w-4 h-4" />,
+    issuer: 'Great Learning',
+    description: 'Certified in Android app development via Great Learning’s Android course, including UI components, layouts, and backend integration.',
+    date: 'Jan 2025',
+    link: 'https://drive.google.com/file/d/1ATEBHVl3QGH-Yn1_L1Pb3c5U5E0E8-d4/view?usp=drivesdk',
+    variant: 'default',
+  },
+  {
+    type: 'Certification',
+    title: 'Introduction to C++',
+    issuerIcon: <Building className="w-4 h-4" />,
+    issuer: 'Simplilearn',
+    description: 'Completed Introduction to C++ by Simplilearn, learning programming basics, data types, and control structures.',
+    date: 'Jan 2025',
+    link: 'https://drive.google.com/file/d/1AVBcuKEM4zeWQ2T-K7g7YL-BK04gNChlK/view?usp=drivesdk',
+    variant: 'default',
+  },
+  {
+    type: 'Certification',
+    title: 'Advanced C++',
+    issuerIcon: <Building className="w-4 h-4" />,
+    issuer: 'Simplilearn',
+    description: 'Completed Advanced C++ course from Simplilearn, covering OOP principles, STL, and memory management.',
+    date: 'Jan 2025',
+    link: 'https://drive.google.com/file/d/1AekdWTgfsLp00KcQa5r8gVbjxcalnRP/view?usp=drivesdk',
     variant: 'default',
   },
 ];
@@ -63,7 +107,7 @@ export default function CertificationsSection() {
                   <p className="text-muted-foreground text-sm mb-6 flex-grow">{item.description}</p>
                   <div className="flex justify-between items-center text-sm text-muted-foreground mt-auto">
                     <span>{item.date}</span>
-                    <a href="#" className="flex items-center gap-1 text-primary hover:underline">
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-primary hover:underline">
                       View details <ArrowUpRight className="w-4 h-4" />
                     </a>
                   </div>
