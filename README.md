@@ -1,7 +1,3 @@
-
----
-
-```markdown
 # 👨‍💻 Samadhan Kadam – Personal Developer Portfolio
 
 This is the source code for my personal portfolio website, built using **Next.js**, **Tailwind CSS**, and **TypeScript**, and deployed on **Vercel**. It serves as a showcase of my development skills, projects, internships, achievements, and contact information.
